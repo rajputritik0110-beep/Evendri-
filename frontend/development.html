@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>EVENDRI - Innovative Development Services</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- Favicons -->
+    <link href="assets/img/Evendri.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <link href="assets/css/main.css" rel="stylesheet">
+
+    <style>
+        .new-service-container { padding: 40px 0; }
+        .service-row { align-items: start; margin-bottom: 80px; }
+
+        /* Screenshot Style Header for Image Side */
+        .image-side-header { margin-bottom: 25px; }
+        .image-side-header h2 {
+            /* Size yahan se bada kar diya gaya hai (2.2rem -> 2.8rem) */
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #2c3e50;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .image-side-header p {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            max-width: 90%;
+        }
+
+        .service-image-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .service-image-wrapper img { transition: transform 0.5s ease; width: 100%; }
+        .service-image-wrapper:hover img { transform: scale(1.05); }
+
+        /* Right Side Content Card */
+        .content-card {
+            background: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid #f8f9fa;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.02);
+        }
+
+        .service-title-right {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .service-subtitle-right {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .feature-card {
+            text-align: left;
+            padding: 15px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        /* Hover effect to make it look active */
+        .feature-card:hover {
+            background: #f8faff;
+        }
+
+        .feature-icon-box {
+            width: 50px;
+            height: 50px;
+            background: #f0f4ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-icon-box i { font-size: 1.5rem; color: #0d6efd; transition: all 0.3s ease; }
+
+        /* Click/Hover par Image wala blue color */
+        .feature-card:hover .feature-icon-box,
+        .feature-card:active .feature-icon-box {
+            background: #0000FF !important; /* Blue Color from Screenshot */
+        }
+
+        .feature-card:hover .feature-icon-box i,
+        .feature-card:active .feature-icon-box i {
+            color: #ffffff !important;
+        }
+
+        .feature-card h4 { font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+        .feature-card p { font-size: 0.9rem; color: #777; line-height: 1.4; }
+
+        @media (max-width: 991px) {
+            .image-side-header h2 { font-size: 2.2rem; }
+            .content-card { margin-top: 30px; padding: 25px; }
+            .features-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+
+<body class="service-details-page">
+
+<header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+
+            <!-- Uncomment the line below if you also wish to use an image logo -->
+            <img src="assets/img/Evendri1.jpg" alt="evendri">
+            <h1 class="sitename">Evendri</h1>
+        </a>
+        <nav id="navmenu" class="navmenu">
+            <ul>
+                <li><a href="index.html#hero">Home</a></li>
+                <li><a href="index.html#services" class="active">Services</a></li>
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfXamyOEpeicyY3sLioYI__ib8WF6Pm44x2DnOOfHJzo7FVCg/viewform?usp=header" class="btn-getstarted">Apply Now</a>
+    </div>
+</header>
+
+<main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title">
+        <div class="heading">
+            <div class="container text-center">
+                <h1 class="heading-title">Service Details</h1>
+            </div>
+        </div>
+        <nav class="breadcrumbs d-flex justify-content-center">
+            <div class="container">
+                <ol class="d-flex justify-content-center">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="current">Services Details</li>
+                    <li class="current">Development</li>
+                </ol>
+            </div>
+        </nav>
+    </div> <!-- End Page Title -->
+
+    <section id="service-details" class="new-service-container">
+        <div class="container">
+
+            <!-- web development------------------------------------------------------------------------------------ -->
+            <div class="row service-row">
+                <div class="col-lg-5" data-aos="fade-right">
+                    <div class="image-side-header">
+                        <h2>Website Development Optimization</h2>
+                        <p>We provide end-to-end web solutions that ensure fast, secure, and scalable digital experiences for your users.</p>
+                    </div>
+                    <div class="service-image-wrapper">
+                        <img src="assets/img/service-img/development/web.jpg" alt="Web Development" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-7" data-aos="fade-left">
+                    <div class="content-card">
+                        <h3 class="service-title-right">Custom Web applications tailored to your needs</h3>
+                        <p class="service-subtitle-right">We craft responsive, user-friendly, and high-performance websites tailored to your business needs. From design to deployment, our solutions help you stand out online. Our web development services combine creativity and technology to build websites that drive engagement, conversions, and growth.</p>
+
+                        <div class="features-grid">
+                            <div class="feature-card">
+                                <div class="feature-icon-box"><i class="bi bi-lightning-charge"></i></div>
+                                <h4>Performance Optimization</h4>
+                                <p>Fast, responsive websites ensuring smooth users experience and engagement.</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon-box"><i class="bi bi-shield-check"></i></div>
+                                <h4>Secure Web Development</h4>
+                                <p>Top-tier security protecting your website and user data.</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon-box"><i class="bi bi-graph-up"></i></div>
+                                <h4>Growth With Web Solutions</h4>
+                                <p>Websites designed to attract users and business conversions.</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon-box"><i class="bi bi-people"></i></div>
+                                <h4>Custom Web Solutions</h4>
+                                <p>Tailored web solutions built to meet your needs.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile development---------------------------------------------------------------------------------------- -->
+            <div class="row service-row flex-lg-row-reverse">
+                <div class="col-lg-5" data-aos="fade-left">
+                    <div class="image-side-header">
+                        <h2>Mobile Application Development</h2>
+                        <p>We build innovative, high-performance mobile applications that enhance user engagement and drive business growth.</p>
+                    </div>
+                    <div class="service-image-wrapper">
+                        <img src="assets/img/service-img/development/mobile.jpg" alt="Mobile Development" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-7" data-aos="fade-right">
+                    <div class="content-card">
+                        <h3 class="service-title-right">Seamless Mobile Experiences</h3>
+                        <p class="service-subtitle-right">From idea to deployment, we design and develop mobile apps that are secure, scalable, and user-friendly. Our apps deliver consistent performance across both Android and iOS platforms.</p>
+                        <div class="features-grid">
+                            <div class="feature-card">
+                                <div class="feature-icon-box"><i class="bi bi-phone"></i></div>
+                                <h4>Cross-Platform Apps</h4>
+                                <p>Delivering apps that work smoothly on both iOS and Android.</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon-box"><i class="bi bi-lock"></i></div>
+                                <h4>Secure & Reliable</h4>
+                                <p>Top-notch security features to safeguard your users' data.</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon-box"><i class="bi bi-speedometer2"></i></div>
+                                <h4>Optimized Performance</h4>
+                                <p>Fast, smooth, and scalable apps that keep users engaged.</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon-box"><i class="bi bi-person-check"></i></div>
+                                <h4>User-Centered Design</h4>
+                                <p>Intuitive UI/UX designed for maximum customer satisfaction.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Api---------------------------------------------------------------------------------------- -->
+            <div class="row service-row">
+                <div class="col-lg-5" data-aos="fade-right">
+                    <div class="image-side-header">
+                        <h2>API Development & Integration</h2>
+                        <p>We design and implement powerful APIs that enable seamless connectivity between your applications and systems.</p>
+                    </div>
+                    <div class="service-image-wrapper">
+                        <img src="assets/img/service-img/development/api.jpg" alt="API Integration" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-7" data-aos="fade-left">
+                    <div class="content-card">
+                        <h3 class="service-title-right">Build Scalable, Connected Solutions</h3>
+                        <p class="service-subtitle-right">Our API development services empower your business with secure, efficient, and well-documented APIs for optimized workflows and data exchange.</p>
+                        <div class="features-grid">
+                            <div class="feature-card">
+                                <div class="feature-icon-box"><i class="bi bi-gear-wide-connected"></i></div>
+                                <h4>Custom API Development</h4>
+                                <p>Tailored APIs designed for your specific business needs.</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon-box"><i class="bi bi-diagram-3"></i></div>
+                                <h4>Third-Party Integration</h4>
+                                <p>Connect with popular platforms and tools effortlessly.</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon-box"><i class="bi bi-shield-lock"></i></div>
+                                <h4>Secure & Scalable</h4>
+                                <p>Strong authentication and high performance for growth.</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon-box"><i class="bi bi-file-earmark-text"></i></div>
+                                <h4>Documentation</h4>
+                                <p>Easy-to-use APIs with clear, developer-friendly guides.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<footer id="footer" class="footer position-relative light-background">
+    <div class="container">
+        <div class="footer-main" data-aos="fade-up" data-aos-delay="100">
+            <div class="row align-items-start">
+                <div class="col-lg-5">
+                    <div class="brand-section">
+                        <a href="index.html" class="logo d-flex align-items-center mb-4">
+                            <span class="sitename">Evendri</span>
+                        </a>
+                        <p class="brand-description">Crafting exceptional digital experiences through thoughtful design and innovative solutions.</p>
+                        <div class="contact-info mt-5">
+                            <div class="contact-item">
+                                <i class="bi bi-geo-alt"></i>
+                                <span>Pinto Park, Gwalior, Madhya Pradesh (474005)</span>
+                            </div>
+                            <div class="contact-item" style="display: flex; align-items: flex-start; gap: 10px;">
+                                <i class="bi bi-telephone" style="margin-top: 5px;"></i>
+                                <div style="display: flex; flex-direction: column; gap: 15px;">
+                                    <span>+91 9111306620</span>
+                                    <span>+91 9993291765</span>
+                                </div>
+                            </div>
+                            <div class="contact-item ">
+                                <i class="bi bi-envelope"></i>
+                                <div class="card-content">
+                                    <p>group@evendri.in</p>
+                                    <p>evendrigroupteam@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="footer-nav-wrapper">
+                        <div class="row">
+                            <div class="col-6 col-lg-3">
+                                <div class="nav-column">
+                                    <h6>Studio</h6>
+                                    <nav class="footer-nav">
+                                        <a>Our Story</a>
+                                        <a >Design Process</a>
+                                        <a >Data Manage</a>
+                                        <a >Case Studies</a>
+                                        <a >Team</a>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-3">
+                                <div class="nav-column">
+                                    <h6>Services</h6>
+                                    <nav class="footer-nav">
+                                        <a>Training and placement</a>
+                                        <a>Web Design</a>
+                                        <a >Mobile Apps</a>
+                                        <a >Digital Strategy</a>
+                                        <a >Consultation</a>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-3">
+                                <div class="nav-column">
+                                    <h6>Resources</h6>
+                                    <nav class="footer-nav">
+                                        <a >Design Blog</a>
+                                        <a >Style Guide</a>
+                                        <a >Free Assets</a>
+                                        <a >Tutorials</a>
+                                        <a >Inspiration</a>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-3">
+                                <div class="nav-column">
+                                    <h6>Connect</h6>
+                                    <nav class="footer-nav">
+                                        <a >Start Project</a>
+                                        <a >Schedule Call</a>
+                                        <a >Join Newsletter</a>
+                                        <a >Follow Updates</a>
+                                        <a >Collaboration</a>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-social" data-aos="fade-up" data-aos-delay="200">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="newsletter-section">
+                        <h5>Stay Inspired</h5>
+                        <p>"Every small step today builds the path to your big dream tomorrow".</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="social-section">
+                        <div class="social-links">
+                            <a href="https://www.instagram.com/evendriev?igsh=ZzM5ZTByOGpuMjdr" aria-label="Instagram" class="social-link">
+                                <i class="bi bi-instagram"></i>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="https://www.linkedin.com/groups/14780214" aria-label="LinkedIn" class="social-link">
+                                <i class="bi bi-linkedin"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="bottom-content" data-aos="fade-up" data-aos-delay="300">
+                <div class="row align-items-center">
+
+                    <div class="col-lg-6">
+                        <div class="copyright">
+                            <p>© <span class="sitename">Evendri</span>. All rights reserved.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="legal-links">
+                            <a >Privacy Policy</a>
+                            <a href="term_condition.html">Terms of Service</a>
+                            <a >Cookie Policy</a>
+                            <div class="credits">
+
+                                Designed by Team EVENDRI
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Scroll Top -->
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<!-- Vendor JS Files -->
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+<!-- Main JS File -->
+<script src="assets/js/main.js"></script>
+</body>
+</html>

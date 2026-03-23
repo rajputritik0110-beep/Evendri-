@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>EVENDRI</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;600;700&family=Nunito:wght@300;400;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    body {
+      background: #f1f3f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 30px;
+    }
+
+    .form-wrapper {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .para{
+      text-align: center;
+      color: #9e9b9b;
+      font-family: var(--heading-font);
+      font-size: 11px;
+      margin: -20px 0 25px 0;
+    }
+
+    /* Stepper */
+    .stepper {
+      position: relative;
+      display: flex;
+      left: 5vw;
+      justify-content: space-between;
+      margin-bottom: 50px;
+      align-items: center;
+      text-align: center;
+      /* background-color: #0d6efd; */
+    }
+
+    .stepper::before {
+      content: "";
+      position: absolute;
+      top: 15px;
+      /* aligns line with circle centers */
+      left: 2%;
+      width: 76%;
+      height: 3px;
+      background: #e0e0e0;
+      border-radius: 3px;
+      z-index: 1;
+      /* background-color: #0d6efd; */
+    }
+
+    .progress-line {
+      position: absolute;
+      top: 15px;
+      left: 2%;
+      min-width: 0%;
+      max-width: 76%;
+      height: 3px;
+      background: linear-gradient(90deg, #0d6efd, #66b2ff);
+      border-radius: 3px;
+      z-index: 2;
+      transition: width 0.4s ease;
+    }
+
+    .step {
+      flex: 1;
+      position: relative;
+      z-index: 3;
+    }
+
+    .circle {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #ddd;
+      border: 3px solid #e0e0e0;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .active .circle {
+      background: #0d6efd;
+      border-color: #0d6efd;
+      color: white;
+      box-shadow: 0 0 8px rgba(13, 110, 253, 0.5);
+    }
+
+    .step p {
+      margin-top: 35px;
+      margin-left: -8vw;
+      font-size: 12px;
+      color: #9e9b9b;
+      font-family: var(--heading-font);
+    }
+
+    /* Form sections */
+    .form-section {
+      display: none;
+      padding: 20px;
+      margin: 30px;
+      /* background-color: #0d6efd; */
+    }
+
+    
+
+    .form-section.active {
+      display: block;
+    }
+
+    .required-star {
+      color: red;
+      margin-left: 4px;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-bottom: 15px;
+      font-size: 14px;
+      color: #007bff;
+      text-decoration: none;
+      font-weight: bold;
+      font-family: var(--heading-font);
+    }
+
+    .back-btn:hover {
+      text-decoration: underline;
+    }
+
+    h2 {
+      color: var(--accent-color);
+      font-family: var(--heading-font);
+    }
+
+    label{
+      color: var(--heading-color);
+      font-family: var(--heading-font);
+      margin-top: 8px;
+      font-size: 11.5px;
+    }
+
+    /* tablet or small laptop */
+    @media (min-width: 481px) and (max-width: 1024px) {
+    .circle {
+        animation-duration: 14s;
+        /* bottom: auto; */
+        top: 0vw;
+        left: 0vw;
+    }
+}
+
+
+/* mobile */
+@media (max-width: 480px) {
+    .circle {
+        animation-duration: 14s;
+        bottom: auto;
+        top: 0vw;
+        left: 0vw;
+    }
+
+    label{
+      font-size:8px;
+    }
+    .form-section{
+      margin:0px;
+
+    }
+
+    #applicationForm{
+      margin-top: -50px;
+    }
+
+    .step p {
+       font-size: 9px;
+       /* justify-content: space-between; */
+       margin-right: 20px;
+    }
+}
+  </style>
+</head>
+
+<body class="form-details-page">
+
+  <div class="form-wrapper">
+
+    <!-- Back Button -->
+    <a href="index.html" class="back-btn">← Back</a>
+    <h2 class="  text-center mb-4">Apply Now</h2>
+    <p class="para">Apply today to begin on your career journey with us and initiate your training and placement process for a successful future.</p>
+
+    <!-- Stepper -->
+    <div class="stepper mb-4">
+      <div class="progress-line" ></div>
+      <div class="step active">
+        <div class="circle">1</div>
+        <p>Candidate Information</p>
+      </div>
+      <div class="step">
+        <div class="circle">2</div>
+        <p>Family Information</p>
+      </div>
+      <div class="step">
+        <div class="circle">3</div>
+        <p>Skills & Job</p>
+      </div>
+      <div class="step">
+        <div class="circle">4</div>
+        <p>Documents</p>
+      </div>
+    </div>
+
+    <!-- Form -->
+    <!-- Form -->
+<form id="applicationForm">
+  <!-- Section 1 -->
+  <div class="form-section active">
+    <div class="mb-3">
+      <label>Full Name: <span class="required-star">*</span></label>
+      <input type="text" name="fullName" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label>Email Address: <span class="required-star">*</span></label>
+      <input type="email" name="email" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label>Phone Number: <span class="required-star">*</span></label>
+      <input type="text" name="phone" class="form-control" pattern="^[0-9]{10}$" title="Enter a valid 10-digit phone number" required>
+    </div>
+    <div class="mb-3">
+      <label>Gender: <span class="required-star">*</span></label><br>
+      <input type="radio" name="gender" value="Female" required> Female
+      <input type="radio" name="gender" value="Male"> Male
+      <input type="radio" name="gender" value="Other"> Other
+    </div>
+    <div class="mb-3">
+      <label>Current Location (City, State): <span class="required-star">*</span></label>
+      <input type="text" name="location" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label>Date of Birth: <span class="required-star">*</span></label>
+      <input type="date" name="dob" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label>Highest Qualification: <span class="required-star">*</span></label>
+      <input type="text" name="qualification" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label>Total Experience in Month: <span class="required-star">*</span></label>
+      <input type="number" name="experience" class="form-control" required>
+    </div>
+    <div class="d-flex justify-content-end">
+      <button type="button" class="btn btn-primary next">Next <i class="bi bi-arrow-right ms-2"></i></button>
+    </div>
+  </div>
+
+  <!-- Section 2 -->
+  <div class="form-section">
+    <div class="mb-3"><label>Father’s Name: <span class="required-star">*</span></label><input type="text" name="fatherName" class="form-control" required></div>
+    <div class="mb-3"><label>Mother’s Name: <span class="required-star">*</span></label><input type="text" name="motherName" class="form-control" required></div>
+    <div class="mb-3"><label>Father’s Occupation: <span class="required-star">*</span></label><input type="text" name="fatherOccupation" class="form-control" required></div>
+    <div class="mb-3"><label>Mother’s Occupation: <span class="required-star">*</span></label><input type="text" name="motherOccupation" class="form-control" required></div>
+    <div class="mb-3"><label>Current Address: <span class="required-star">*</span></label><textarea name="currentAddress" class="form-control" required></textarea></div>
+    <div class="mb-3"><label>Permanent Address: <span class="required-star">*</span></label><textarea name="permanentAddress" class="form-control" required></textarea></div>
+    <div class="mb-3"><label>Do you live in your own house or rented house?: <span class="required-star">*</span></label>
+      <select name="houseType" class="form-select" required>
+        <option value="">Select</option>
+        <option value="own">Own</option>
+        <option value="rented">Rented</option>
+      </select>
+    </div>
+    <div class="mb-3"><label>Number of family members living with you: <span class="required-star">*</span></label><input type="number" name="familyMembers" class="form-control" required></div>
+    <div class="d-flex justify-content-between">
+      <button type="button" class="btn btn-secondary prev"> <i class="bi bi-arrow-left me-2"></i>Previous</button>
+      <button type="button" class="btn btn-primary next">Next<i class="bi bi-arrow-right ms-2"></i></button>
+    </div>
+  </div>
+
+  <!-- Section 3 -->
+  <div class="form-section">
+    <div class="mb-3"><label>Current / Last Company: <span class="required-star">*</span></label><input type="text" name="company" class="form-control" required></div>
+    <div class="mb-3"><label>Current / Last Job Title: <span class="required-star">*</span></label><input type="text" name="jobTitle" class="form-control" required></div>
+    <div class="mb-3"><label>Key Skills: <span class="required-star">*</span></label><input type="text" name="skills" class="form-control" required></div>
+    <div class="mb-3">
+      <label>Certifications (Upload if any):</label>
+      <input type="file" name="certifications" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label>Are you comfortable with: <span class="required-star">*</span></label><br>
+      <input type="radio" name="workPreference" value="Onsite" required> Onsite work
+      <input type="radio" name="workPreference" value="Hybrid"> Hybrid work
+      <input type="radio" name="workPreference" value="Remote"> Remote work
+    </div>
+    <div class="mb-3"><label>Are you open to relocation?: <span class="required-star">*</span></label>
+      <select name="relocation" class="form-select" required>
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+    </div>
+    <div class="mb-3"><label>Are you comfortable with night/weekend shifts?: <span class="required-star">*</span></label>
+      <select name="shifts" class="form-select" required>
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+    </div>
+    <div class="mb-3"><label>Current CTC: </label><input type="text" name="currentCTC" class="form-control"></div>
+    <div class="mb-3"><label>Expected CTC: <span class="required-star">*</span></label><input type="text" name="expectedCTC" class="form-control" required></div>
+    <div class="mb-3"><label>Notice Period: <span class="required-star">*</span></label>
+      <select name="noticePeriod" class="form-select" required>
+        <option value="">Select</option>
+        <option value="Immediately available">Immediately available</option>
+        <option value="15 days">15 days</option>
+        <option value="30 days">30 days</option>
+        <option value="60 days">60 days</option>
+        <option value="90 days">90 days</option>
+      </select>
+    </div>
+    <div class="d-flex justify-content-between">
+      <button type="button" class="btn btn-secondary prev"> <i class="bi bi-arrow-left me-2"></i>Previous</button>
+      <button type="button" class="btn btn-primary next">Next<i class="bi bi-arrow-right ms-2"></i></button>
+    </div>
+  </div>
+
+  <!-- Section 4 -->
+  <div class="form-section">
+    <div class="mb-3"><label>Preferred Joining Date: <span class="required-star">*</span></label><input type="date" name="joiningDate" class="form-control" required></div>
+    <div class="mb-3"><label>Why do you want to join our company?: <span class="required-star">*</span></label><textarea name="reason" class="form-control" required></textarea></div>
+    <div class="mb-3"><label>How did you hear about this Job?: <span class="required-star">*</span></label>
+      <select name="source" class="form-select" required>
+        <option value="">Select</option>
+        <option value="Instagram">Instagram</option>
+        <option value="Facebook">Facebook</option>
+        <option value="LinkedIn">LinkedIn</option>
+        <option value="WhatsApp">WhatsApp</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label>Upload Your Resume: <span class="required-star">*</span></label>
+      <input type="file" name="resume" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label>Upload Your Passport Size Photo: <span class="required-star">*</span></label>
+      <input type="file" name="photo" class="form-control" required>
+    </div>
+    <div class="d-flex justify-content-between">
+      <button type="button" class="btn btn-secondary prev">Previous</button>
+      <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+  </div>
+</form>
+
+  </div>
+
+  <script>
+  const steps = document.querySelectorAll(".step");
+  const formSections = document.querySelectorAll(".form-section");
+  const nextBtns = document.querySelectorAll(".next");
+  const prevBtns = document.querySelectorAll(".prev");
+  const form = document.getElementById("applicationForm");
+  const progressLine = document.querySelector(".progress-line");
+  let currentStep = 0;
+
+  function updateFormSteps() {
+    formSections.forEach((section, index) => {
+      section.classList.toggle("active", index === currentStep);
+      steps[index].classList.toggle("active", index <= currentStep);
+    });
+
+    let percent = (currentStep / (steps.length - 1)) * 100;
+    progressLine.style.width = percent + "%";
+  }
+
+  function validateSection(section) {
+    const inputs = section.querySelectorAll("input, select, textarea");
+    for (let input of inputs) {
+      if (!input.checkValidity()) {
+        input.reportValidity();
+        return false;
+      }
+    }
+    return true;
+  }
+
+  nextBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      if (!validateSection(formSections[currentStep])) return;
+      currentStep++;
+      if (currentStep > formSections.length - 1) currentStep = formSections.length - 1;
+      updateFormSteps();
+    });
+  });
+
+  prevBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      currentStep--;
+      if (currentStep < 0) currentStep = 0;
+      updateFormSteps();
+    });
+  });
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    if (!validateSection(formSections[currentStep])) return;
+
+    const formData = new FormData(form); // ✅ includes files + text
+
+    try {
+      const response = await fetch("http://localhost:5000/apply", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!response.ok) {
+        // ❌ If server sends 500/400 → throw error
+        const errorText = await response.text();
+        throw new Error(`Server error: ${response.status} - ${errorText}`);
+      }
+
+      const result = await response.json();
+      console.log("✅ Server Response:", result);
+
+      if (result.success) {
+        document.querySelector(".form-wrapper").innerHTML = `
+          <div class="text-center p-5">
+            <h2 class="mb-3 text-success">Your Application Form is Submitted</h2>
+            <div style="font-size:80px; color:green;">&#10004;</div>
+          </div>`;
+      } else {
+        alert(result.message || "Something went wrong!");
+      }
+    } catch (err) {
+      console.error("❌ Frontend error:", err);
+      alert("Error submitting application: " + err.message);
+    }
+  });
+</script>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+</body>
+
+</html>
