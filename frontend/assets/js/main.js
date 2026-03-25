@@ -195,3 +195,9 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+
+const API_BASE = "https://evendri-x6y3.onrender.com";
+
+fetch(${API_BASE}/api/data)
+  .then(res => res.json())
+  .then(data => console.log(data));
