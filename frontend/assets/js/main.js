@@ -196,8 +196,14 @@
 
 })();
 
+// --- Corrected API Fetch Section ---
 const API_BASE = "https://evendri-x6y3.onrender.com";
 
-fetch(${API_BASE}/api/data)
-  .then(res => res.json())
-  .then(data => console.log(data));
+// Method 1: Using Template Literals (Recommended)
+fetch(`${API_BASE}/api/data`)
+  .then(res => {
+    if (!res.ok) throw new Error("Network response was not ok");
+    return res.json();
+  })
+  .then(data => console.log("Data from Backend:", data))
+  .catch(err => console.error("Fetch Error:", err));
